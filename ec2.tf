@@ -23,11 +23,11 @@ resource "aws_ebs_volume" "ebs1" {
     Name = "Terraform_ebs_volume"
     env  = "Dev"
   }
-  
+
 }
-  resource "aws_volume_attachment" "att" {
-    instance_id = aws_instance.server1.id
-    volume_id   = aws_ebs_volume.ebs1.id
-    device_name = "/dev/sdb"
-  }
+resource "aws_volume_attachment" "att" {
+  instance_id = aws_instance.server1.id
+  volume_id   = aws_ebs_volume.ebs1.id
+  device_name = "/dev/sdb"
+}
  
